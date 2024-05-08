@@ -1,0 +1,57 @@
+<!-- home.html.heex -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genshin Impact Wiki</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Adicionando o ícone na aba do navegador -->
+  <link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=16QWpUhsXrikVpOnUiwxM46_nApVJzdkT">
+</head>
+
+<!-- header.html.heex -->
+<header class="mb-8 flex justify-between items-center bg-gray-900 text-white h-16">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center">
+      <h1 class="text-xl font-bold">Genshin Impact Wiki</h1>
+    </div>
+  </div>
+  <div class="flex space-x-4 pr-4">
+    <a href="/characters" class="text-white font-bold">Personagens</a>
+    <a href="/banners" class="text-white font-bold">Eventos</a>
+    <a href="/voices" class="text-white font-bold">Falas</a>
+    <a href="/" class="text-white font-bold mr-4">Home</a>
+  </div>
+</header>
+
+<!-- table.html.heex -->
+<div class="container mx-auto p-4">
+  <!-- Conteúdo das falas -->
+   <div class="grid grid-cols-1 gap-4">
+    <%= for voice <- @voices do %>
+      <div class="bg-white shadow-md rounded-md p-6">
+        <h2 class="text-xl font-semibold mb-4"><%= voice.title %></h2>
+        <p><strong>Title:</strong> <%= voice.title %></p>
+        <p><strong>Details:</strong> <%= voice.details %></p>
+        <p><strong>Spoken by:</strong> <%= voice.spoken_by %></p>
+      </div>
+    <% end %>
+  </div>
+  
+  <!-- Botão para próxima página -->
+  <div class="flex justify-center mt-8">
+    <.link navigate={~p"/voices?page=#{@page+1}"} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Next Page
+    </.link>
+  </div>
+</div>
+
+<!-- Rodapé -->
+<footer class="mt-8 bg-gray-900 text-white py-4">
+  <div class="container mx-auto px-4">
+    <p class="text-center">Desenvolvido por Ana Laura, Arthur Ramón, Davi Baratto, Pedro Gomes - 2024</p>
+    <p class="text-center">Disciplina: Programação Funcional - Professor Andrei Formiga</p>
+  </div>
+</footer>
+</html>

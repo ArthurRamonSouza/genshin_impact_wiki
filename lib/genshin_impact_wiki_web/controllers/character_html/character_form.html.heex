@@ -1,0 +1,13 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:name]} type="text" label="Name" />
+  <.input field={f[:rarity]} type="text" label="Rarity" />
+  <.input field={f[:weapon]} type="text" label="Weapon" />
+  <.input field={f[:vision]} type="text" label="Vision" />
+  <.input field={f[:wiki_url]} type="text" label="Wiki url" />
+  <:actions>
+    <.button>Save Character</.button>
+  </:actions>
+</.simple_form>

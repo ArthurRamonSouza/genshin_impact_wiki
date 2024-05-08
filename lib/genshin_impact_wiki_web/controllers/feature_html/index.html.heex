@@ -1,0 +1,23 @@
+<.header>
+  Listing Features
+  <:actions>
+    <.link href={~p"/features/new"}>
+      <.button>New Feature</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="features" rows={@features} row_click={&JS.navigate(~p"/features/#{&1}")}>
+  <:col :let={feature} label="Name"><%= feature.name %></:col>
+  <:action :let={feature}>
+    <div class="sr-only">
+      <.link navigate={~p"/features/#{feature}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/features/#{feature}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={feature}>
+    <.link href={~p"/features/#{feature}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

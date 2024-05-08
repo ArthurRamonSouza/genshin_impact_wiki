@@ -1,0 +1,15 @@
+<.header>
+  Feature <%= @feature.id %>
+  <:subtitle>This is a feature record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/features/#{@feature}/edit"}>
+      <.button>Edit feature</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Name"><%= @feature.name %></:item>
+</.list>
+
+<.back navigate={~p"/features"}>Back to features</.back>

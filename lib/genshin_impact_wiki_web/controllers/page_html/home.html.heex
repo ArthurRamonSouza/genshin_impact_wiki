@@ -1,0 +1,87 @@
+<!-- home.html.heex -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genshin Impact Wiki</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Adicionando o ícone na aba do navegador -->
+  <link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=16QWpUhsXrikVpOnUiwxM46_nApVJzdkT">
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="container mx-auto p-4">
+
+    <!-- Adicionando o logo do Genshin Impact -->
+    <header class="mb-8 flex justify-between items-center">
+      <div>
+        <img src="https://upload-os-bbs.hoyolab.com/upload/2020/01/29/1015929/80cd37334ccd43a6fc10520bbd112150_4492582747931239710.png?x-oss-process=image%2Fresize%2Cs_1000%2Fauto-orient%2C0%2Finterlace%2C1%2Fformat%2Cwebp%2Fquality%2Cq_80" alt="Genshin Impact Logo" class="m-0 p-0">
+      </div>
+    </header>
+    
+    <!-- Links no cabeçalho -->
+    <nav class="absolute inset-0 flex justify-between items-center bg-gray-900 bg-opacity-75 w-full h-16" style="position: fixed;">
+      <div class="flex space-x-4">
+        <a href="/characters" class="text-white font-bold ml-4">Persongens</a>
+        <a href="/banners" class="text-white font-bold">Eventos</a>
+        <a href="/voices" class="text-white font-bold">Falas</a>
+        <a href="#" class="text-white font-bold">Home</a>
+      </div>
+    </nav>
+
+
+    <!-- Bem-vindo à Genshin Impact Wiki -->
+    <div class="bg-white shadow-md rounded-md p-6 mb-8">
+      <h1 class="text-3xl font-semibold text-center mb-4"><%= @message %></h1>
+      <p class="text-lg text-center">
+        Explore o vasto mundo de Teyvat e descubra seus segredos com a Genshin Impact Wiki, uma aplicação Phoenix dedicada a fornecer uma interface simples e intuitiva para acessar a API de Genshin Impact. Desenvolvida como parte do aprendizado da cadeira de programação funcional, esta aplicação é um exemplo prático do uso do framework Phoenix, da biblioteca HTTPoison e da linguagem de programação Elixir.
+      </p>
+    </div>
+
+    <!-- Descubra o Universo de Genshin Impact -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <div class="bg-white shadow-md rounded-md p-6">
+        <h2 class="text-xl font-semibold mb-4">Explore o Universo de Genshin Impact</h2>
+        <p>
+          Genshin Impact é um jogo de RPG de mundo aberto que cativou milhões de jogadores em todo o mundo. Com uma vasta terra para explorar, uma variedade de personagens únicos para jogar e uma história envolvente para descobrir, há sempre algo novo para ser descoberto em Teyvat. A Genshin Impact Wiki é o seu guia definitivo para este mundo mágico, trazendo informações atualizadas diretamente da API oficial do jogo.
+        </p>
+      </div>
+
+      <!-- Aprendizado Prático em Programação Funcional -->
+      <div class="bg-white shadow-md rounded-md p-6">
+        <h2 class="text-xl font-semibold mb-4">Aprendizado Prático em Programação Funcional</h2>
+        <p>
+          Esta aplicação foi criada como parte de um projeto de aprendizado em programação funcional, utilizando os princípios e práticas ensinadas ao longo da cadeira. Ao utilizar o framework Phoenix, a biblioteca HTTPoison e a linguagem Elixir, os desenvolvedores puderam consolidar seu conhecimento teórico em uma aplicação prática e funcional. A Genshin Impact Wiki é um exemplo de como a programação funcional pode ser aplicada de forma eficaz no desenvolvimento de software.
+        </p>
+      </div>
+    </div>
+
+    <!-- API Estatísticas -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <div class="bg-white shadow-md rounded-md p-6">
+        <h2 class="text-xl font-semibold mb-4">API Endpoints</h2>
+        <ul>
+          <li><strong>Banners Endpoint:</strong> <%= @banners_endpoint %></li>
+          <li><strong>Characters Endpoint:</strong> <%= @characters_endpoint %></li>
+          <li><strong>Voices Endpoint:</strong> <%= @voices_endpoint %></li>
+        </ul>
+      </div>
+
+      <div class="bg-white shadow-md rounded-md p-6">
+        <h2 class="text-xl font-semibold mb-4">Statistics</h2>
+        <ul>
+          <li><strong>Banners:</strong> <%= @banners %></li>
+          <li><strong>Characters:</strong> <%= @characters %></li>
+          <li><strong>Voices:</strong> <%= @voices %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+<footer class="mt-8 bg-gray-900 text-white py-4">
+  <div class="container mx-auto px-4">
+    <p class="text-center">Desenvolvido por Ana Laura, Arthur Ramón, Davi Baratto, Pedro Gomes - 2024</p>
+    <p class="text-center">Disciplina: Programação Funcional - Professor Andrei Formiga</p>
+  </div>
+</footer>
+</html>
